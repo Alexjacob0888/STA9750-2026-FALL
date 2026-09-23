@@ -1,0 +1,30 @@
+---
+title: "Alex Mathirapalil Jacob"
+---
+
+Welcome to my STA 9750 course website.
+
+I am a student at Baruch College, and this site will contain my coursework and mini-projects for STA 9750: Software Tools for Data Analysis.
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+if(!require("leaflet")){
+    options(repos=c(CRAN="https://cloud.r-project.org"))
+    install.packages("leaflet")
+    stopifnot(require("leaflet"))
+}
+
+baruch_longitude <- -73.98333
+baruch_latitude  <- +40.74028
+
+leaflet() |>
+  addTiles() |>
+  setView(baruch_longitude, baruch_latitude, zoom=17) |>
+  addPopups(
+    baruch_longitude,
+    baruch_latitude,
+    "I am a Master's student at <b>Baruch College</b>!"
+  )
+```
