@@ -18,3 +18,5 @@ data/**
 *bspf
 **/*bspf
 .RData
+/.quarto/
+**/*.quarto_ipynb
